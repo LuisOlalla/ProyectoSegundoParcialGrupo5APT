@@ -1,0 +1,136 @@
+/*Propiedad del botón*/
+.btn{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 15px 55px;
+    text-decoration: none; /* Establecer el formato de texto para que no este subrayado */
+    font-family: Hind,sans-serif;
+}
+
+/*Propiedad del botón naranja*/
+.btn-orange{
+    color: white;
+    background-color: #2076e6; /*Color del fondo */
+    border-color: #2076e6; /*Color del borde */
+    cursor: pointer; /*Al pasar el cursos es puntero*/
+    width: 75%;
+}
+
+/*Propiedad del botón naranja1*/
+.btn-orange1{
+    color: white;
+    background-color: #2076e6;
+    border-color: #2076e6;
+    cursor: pointer;
+    width: 98%;
+}
+
+/*Propiedad del botón azul - Registro con FB*/
+.btn-blue{
+    color:white;
+    background-color: RoyalBlue;
+    border-color: royalblue;
+    cursor: pointer;
+    width: 95%;
+}
+
+/*Propiedad del botón azul - Registro con Google*/
+.btn-white{
+    color:black;
+    background-color: white;
+    border-color: white;
+    cursor: pointer;
+    width: 95%;
+}
+
+/*Propiedad del cuadro de texto final*/
+#borRedondeado{
+    width:95%;
+    height: 50%;
+    border:3px solid WhiteSmoke;
+    background-color: WhiteSmoke;
+    border-radius:10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Propiedad de lo cuadros de texto, bordes-relleno*/
+.field{
+    border-radius: 8px;
+}
+.field1{
+    border-radius: 8px;
+    padding: 13px;
+    width: 89%;
+}
+.field2{
+    border-radius: 8px;
+    padding: 13px;
+    width: 89%;
+}
+/*Asignar color a un texto en específico*/
+p span{
+    color:#2076e6;
+}
+/*Propiedad de cuadro de opciones*/
+.op{
+    border-radius: 3px;
+    padding: 13px;
+    width: 107%;
+}
+
+/*Propiedad del contenedor */
+#contenedor {
+    width: 50%;
+    height: auto;
+    margin: 0px auto;
+    border: 10px solid rgb(255, 228, 225);
+    box-shadow: 0px 0px 10px rgb(255, 228, 225);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    min-height: 600px;
+    border-radius: 40px;
+  }
+
+/*Propiedades del cuerpo*/
+  body {font-family: Hind,sans-serif; background-color: white; box-sizing: border-box;}
+    /*Propiedad del form*/
+    form{
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 0 auto;
+        width:300px;
+    }
+    /*Propiedad cuadros de texto*/
+    input,textarea {
+        outline: none;
+        border: 3;
+        width: 290px;       
+    }
+    /*Propiedad de cuadros de texto*/
+    .field{
+        border: solid 2px gray;
+        padding: 13px;
+    }
+    .field1{
+        border: solid 2px gray;
+        padding: 11px;
+    }
+    .field2{
+        border: solid 2px gray;
+        padding: 13px;
+    }
+    /*se activa cuando el usuario hace clic, toca un elemento*/
+    .field:focus{
+        border-color:rgb(8, 61, 233);
+    }
+    .field1:focus{
+        border-color:rgb(8, 61, 233);
+    }
+    .field2:focus{
+        border-color:rgb(8, 61, 233);
+    }
+    /*Propiedad de los botones */
+    .center-content{
+       text-align: center; 
+    }
