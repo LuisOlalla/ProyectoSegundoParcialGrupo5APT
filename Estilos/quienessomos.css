@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'open sans';
+}
+
 /* Header */
 
 header {
@@ -92,6 +101,75 @@ footer{
     margin: 20px 0 0 0;
     color: #9e9797;
 }
+/* quienes somos */
+.somos{
+	font-size: 16px;
+	min-height: 23.62em;
+	color: rgb(55, 75, 82);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: end;
+}
+
+.somos.contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.somos .titulo {
+	font-weight: 100%;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+hr{
+    color: green;
+    height: 0.5cm;
+    background-color: hsla(222, 93%, 53%, 0.459);
+}
+.somos .descripcion {
+	font-weight:lighter;
+	font-size: 1.5em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+    text-align: justify;
+}
+h4{
+    color: rgb(8, 8, 32);
+    font-size:26px;
+    font-weight: 900;
+}
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card{
+    background: #e4ebff;
+    display: flex;
+    width: 30%;
+    height: 400px;
+    align-items: center;
+    justify-content:center;
+    border-radius: 4px;
+    border-color: rgb(55, 75, 82);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card > .contenido-texto-card{
+    width: 70%;
+    text-align: justify;
+    font-size: 19px;
+	color: rgb(55, 75, 82);
+    font-family: 'open sans';
+}
+
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
 @media screen and (max-width:500px){
     nav{
         text-align: center;
@@ -109,7 +187,8 @@ footer{
     .textos-header h2{
         font-size: 20px;
     }
-        /* Footer */
+
+    /* Footer */
 
     .contenedor-footer{
         flex-direction: column;
