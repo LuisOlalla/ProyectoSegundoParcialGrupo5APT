@@ -1,0 +1,342 @@
+
+
+body {
+    font-family: 'open sans';
+    background: #ffffff;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #ffffff;
+    background: -webkit-linear-gradient(to right, hsla(224, 100%, 67%, 0.459), hsla(224, 83%, 72%, 0.664)), url(../imagenes/1.png);
+    background: linear-gradient(to right, hsla(222, 93%, 53%, 0.459), hsla(219, 86%, 75%, 0.664)), url(../imagenes/1.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color:#fff;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* footer */
+
+footer{
+    background: #414141;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color: #fff;
+    border-bottom: 3px solid #af20d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p{
+    color: #ccc;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+/* quienes somos */
+.somos{
+	font-size: 14px;
+	min-height: 23.62em;
+	color: rgb(55, 75, 82);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: end;
+}
+
+.somos.contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.somos .titulo {
+	font-weight: 100%;
+	font-size: 2.12em;
+	margin-bottom: 0.4em;
+}
+hr{
+    color: green;
+    height: 0.5cm;
+    background-color: hsla(222, 93%, 53%, 0.459);
+}
+.somos .descripcion {
+	font-weight:lighter;
+	font-size: 1.5em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+    text-align: justify;
+}
+h4{
+    color: rgb(8, 8, 32);
+    font-size:26px;
+    font-weight: 900;
+}
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card{
+    background: #e4ebff;
+    display: flex;
+    width: 30%;
+    height: 400px;
+    align-items: center;
+    justify-content:center;
+    border-radius: 4px;
+    border-color: rgb(55, 75, 82);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card > .contenido-texto-card{
+    width: 70%;
+    text-align: justify;
+    font-size: 19px;
+	color: rgb(55, 75, 82);
+    font-family: 'open sans';
+}
+
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* Footer */
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final{
+        font-size: 20px;
+    }
+        /* Clientes */
+
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card{
+        width: 90%;
+    }
+
+    .cards .card:first-child{
+        margin-bottom: 30px;
+    }
+}
+
+.container {
+    margin-top: 100px;
+    background: #2b2e4a;
+    margin: 0;
+    padding: 35px;
+}
+
+.contact-form {
+    list-style-type: none;
+}
+
+.contact-form li div {
+    margin-bottom: 2.5em;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 3px solid slategrey;
+    background: #2b2e4a;
+    font-family: 'Roboto', sans-serif;
+    color: lightgrey;
+    font-weight: 700;
+    font-size: 18px;
+    transition: ease-in-out 0.25s;
+}
+
+.contact-form textarea {
+    min-height: 50px;
+    max-height: 500px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: vertical;
+    overflow: hidden;
+}
+
+.contact-form ::-webkit-input-placeholder {
+    font-size: 12px;
+    color: slategrey;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.contact-form label {
+    font-size: 12px;
+    color: slategrey;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.contact-form button:focus {
+    outline: none;
+    resize: none;
+    border-bottom: 3px solid #db4d57;
+}
+
+.contact-form button {
+    color: lightgrey;
+    background: rgba(34, 34, 34, 0.0);
+    border: 3px solid #db4d57;
+    height: 74px;
+    width: 200px;
+    float: right;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: ease-in-out 0.25s;
+}
+
+.contact-form button span {
+    transition: ease-in-out 0.25s;
+}
+
+.contact-form button:hover {
+    background: #db4d57;
+    color: lightgrey;
+}
+
+.contact-form button:hover span {
+    padding-left: 10px;
+    color: white;
+}
+button{
+    background-color: brown; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.op{
+    border-radius: 3px;
+    padding: 13px;
+    width: 107%;
+}
