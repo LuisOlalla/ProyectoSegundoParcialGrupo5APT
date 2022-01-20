@@ -7,7 +7,6 @@ function registrar() {
     var p2 = document.getElementById('p2').value;
     var p3 = document.getElementById('p3').value;
 
-
     datos.push({
         'alumno': nombre,
         'asignatura': asignatura,
@@ -34,8 +33,7 @@ function registrar() {
                           <td>${item.parcial3}</td>
                           <td>${item.promedio}</td>
                           
-              
-                    
+
                        </tr>`
          document.getElementById('filas').innerHTML=fila;
             
