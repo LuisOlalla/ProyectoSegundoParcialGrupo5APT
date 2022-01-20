@@ -27,6 +27,10 @@ function registrar() {
       function crearTabla(){
           var fila='';
 
+          for (let index = 0; index < array.length; index++) {
+              const element = array[index];
+              
+          }
           datos.forEach((item,i) => {
               fila += `<tr>
                           <td>${item.asignatura}</td>
@@ -34,7 +38,7 @@ function registrar() {
                           <td>${item.parcial2}</td>
                           <td>${item.parcial3}</td>
                           <td>${item.puntajefinal}</td>
-                          <td>${item.estado}</td>
+                          <td>${estado}</td>
                           
               
                     
