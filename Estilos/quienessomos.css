@@ -103,7 +103,7 @@ footer{
 }
 /* quienes somos */
 .somos{
-	font-size: 16px;
+	font-size: 14px;
 	min-height: 23.62em;
 	color: rgb(55, 75, 82);
 	background-position: center center;
@@ -120,7 +120,7 @@ footer{
 
 .somos .titulo {
 	font-weight: 100%;
-	font-size: 3.12em;
+	font-size: 2.12em;
 	margin-bottom: 0.4em;
 }
 hr{
@@ -212,5 +212,20 @@ h4{
 
     .titulo-final{
         font-size: 20px;
+    }
+        /* Clientes */
+
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card{
+        width: 90%;
+    }
+
+    .cards .card:first-child{
+        margin-bottom: 30px;
     }
 }
