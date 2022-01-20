@@ -2,3 +2,9 @@
     padding:2em;
     box-shadow:  0 0 10px #999;
 }
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
