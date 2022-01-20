@@ -14,7 +14,7 @@ function registrar() {
         'parcial1': p1,
         'parcial2': p2,
         'parcial3': p3,
-        'promedio': (parseInt(p1) + parseInt(p2) + parseInt(p3)) / 3
+        'promedio': (parseInt(p1) + parseInt(p2) + parseInt(p3)) 
 
     });
 
@@ -26,22 +26,13 @@ function registrar() {
       function crearTabla(){
           var fila='';
 
-          for (let index = 0; index < array.length; index++) {
-              const element = array[index];
-              
-          }
           datos.forEach((item,i) => {
               fila += `<tr>
                           <td>${item.asignatura}</td>
                           <td>${item.parcial1}</td>
                           <td>${item.parcial2}</td>
                           <td>${item.parcial3}</td>
-<<<<<<< HEAD
-                          <td>${item.puntajefinal}</td>
-                          <td>${estado}</td>
-=======
                           <td>${item.promedio}</td>
->>>>>>> 877fa85e1437991f41e64cb06666d568be3179bb
                           
               
                     
@@ -52,6 +43,14 @@ function registrar() {
       }
          
           
+      
+       
+ 
+
+
+
+
+
 
 
 function mostrarModal() {
