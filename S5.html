@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/s1.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="quienessomos.html">Quienes Somos</a>
+            <a href="calificaciones.html">Calificaciones</a>
+            <a href="Login.html">Login</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ORIGIN | Code Academy</h1>
+            <h2>Universidad Tecnologica</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            </svg></div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="text-left" style="color: #f3f3f3">Primer Semestre</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" action="enviarcorreo.php">
+                        <ul class="contact-form">
+                            <li>
+                                <div class="col-md-6">
+                                    <input name="nombre" placeholder="Nombre del Docente" required="required" size="8"
+                                        type="text" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input name="email" placeholder="Email institucional" required="required" size="8" type="email" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-md-6">
+                                    <input name="telefono" placeholder="ID institucional" required="required" size="8"
+                                        type="text" />
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <select class="op" name="opciones">
+                                        <option value="1"> Materias a tomar </option> 
+                                        <option value="2"> FTI</option> 
+                                        <option value="3"> </option>
+                                        <option value="3"> Invitado </option>
+                                    </select> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-md-12">
+                                    <input name="asunto" placeholder="NRC" required="required" size="8"
+                                        type="text" />
+                                </div>
+                            </li>
+                            <center>
+                                <div class="container">
+
+                                    <div class="container" id="contenido"></div>
+                                    <center>
+                                       <a href="calificaciones.html"><button type="button" id="btnCargar">Calcular Promedio</button></a> 
+                                    </center>
+    
+                                </div>
+                            </center>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>8282717281</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>eeeeee@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicación</h4>
+                <p>Santo Domingo de los Tsáchilas</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; GRUPO 5 | Tecnologías Web</h2>
+    </footer>
+</body>
+
+</html>
