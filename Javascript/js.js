@@ -6,7 +6,6 @@ function registrar() {
     var p1 = document.getElementById('p1').value;
     var p2 = document.getElementById('p2').value;
     var p3 = document.getElementById('p3').value;
-    
 
 
     datos.push({
@@ -15,9 +14,9 @@ function registrar() {
         'parcial1': p1,
         'parcial2': p2,
         'parcial3': p3,
-        'puntajefinal': (parseInt(p1) + parseInt(p2) + parseInt(p3))  
-    });
+        'promedio': (parseInt(p1) + parseInt(p2) + parseInt(p3)) / 3
 
+    });
 
     document.getElementById('frmCalif').reset();
     alert('Datos guardados')
@@ -37,8 +36,12 @@ function registrar() {
                           <td>${item.parcial1}</td>
                           <td>${item.parcial2}</td>
                           <td>${item.parcial3}</td>
+<<<<<<< HEAD
                           <td>${item.puntajefinal}</td>
                           <td>${estado}</td>
+=======
+                          <td>${item.promedio}</td>
+>>>>>>> 877fa85e1437991f41e64cb06666d568be3179bb
                           
               
                     
@@ -49,14 +52,6 @@ function registrar() {
       }
          
           
-      
-       
- 
-
-
-
-
-
 
 
 function mostrarModal() {
