@@ -14,7 +14,7 @@ function registrar() {
         'parcial1': p1,
         'parcial2': p2,
         'parcial3': p3,
-        'promedio': (parseInt(p1) + parseInt(p2) + parseInt(p3)) / 3
+        'puntajefinal': (parseInt(p1) + parseInt(p2) + parseInt(p3))
 
     });
 
@@ -32,7 +32,7 @@ function registrar() {
                           <td>${item.parcial1}</td>
                           <td>${item.parcial2}</td>
                           <td>${item.parcial3}</td>
-                          <td>${item.promedio}</td>
+                          <td>${item.puntajefinal}</td>
                           
               
                     
