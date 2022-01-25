@@ -5,7 +5,6 @@
  *
  * @author juscoder
  */
-
  function agregarNotas(){
   
     let nom=document.getElementById('nombre').value;
@@ -13,8 +12,6 @@
     let not2=document.getElementById('nota2').value;
     let not3=document.getElementById('nota3').value;
     
-
-
     //Validadr el campo nombre
     if(nom===""){
         
@@ -36,23 +33,15 @@
     var prom = (parseFloat(not1)+ parseFloat(not2)+ parseFloat(not3)) /3;  
 
     //Variable obserbacion
-
     var  obs =0;
     //Promedio menor o igual a 12.5 entonces aprobado, caso ocntrario aprobado
-
-    if (prom >= 14 && prom <= 19) {
-        obs = value = "!Aprobado¡ &#x2714";
-    } else
-        if (prom >= 19 && prom >= 20) {
-            obs = value = "!Exonerado¡ &#x2714";
-        } else
-            if (prom >= 2 && prom <= 10) {
-                obs = value = "!Desaprobado¡ &#x274c";
-            } else {
-                obs = value = "!Suspenso¡ ⚠️";
-
-            }
-
+    if(prom >=12.5){
+        obs =value="!Aprobado¡ &#x2714";
+        
+    }else{
+    obs =value="!Desaprobado¡ &#x274c";
+    
+    }   
       
     const tabla=document.getElementById('addtabla');
     
@@ -61,44 +50,35 @@
     
     fila.innerHTML=`<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
     
-
-    document.getElementById('algebra').addEventListener('select', CargarDatosAlgebra)
-
+     
 
 
     
     tabla.appendChild(fila);
 
-    if (prom >= 19 && prom >= 20) {
-        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#0af00a";
-    }else
-    if(prom > 14){
-        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#b3deba";
-    }else
-    if(prom < 10){
-        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#ff4d4d";
-
-    } else {
+    if(prom>12.5){
+        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#B3DEBA";
+    }else{
         document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#FFCABA";
     }
-    if (not1 > 14) {
+    if(not1>12.5){
         document.querySelector("#addtabla tr:last-child td:nth-child(2)").style.color = "blue";
-    } else {
+    }else{
         document.querySelector("#addtabla tr:last-child td:nth-child(2)").style.color = "red";
     }
-    if (not2 > 14) {
+    if(not2>12.5){
         document.querySelector("#addtabla tr:last-child td:nth-child(3)").style.color = "blue";
-    } else {
+    }else{
         document.querySelector("#addtabla tr:last-child td:nth-child(3)").style.color = "red";
     }
-    if (not3 > 14) {
+    if(not3>12.5){
         document.querySelector("#addtabla tr:last-child td:nth-child(4)").style.color = "blue";
-    } else {
+    }else{
         document.querySelector("#addtabla tr:last-child td:nth-child(4)").style.color = "red";
     }
-
     
-
+    
+    
     document.getElementById('nombre').value='';
     document.getElementById('nota1').value='';
     document.getElementById('nota2').value='';
