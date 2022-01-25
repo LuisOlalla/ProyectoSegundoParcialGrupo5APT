@@ -5,7 +5,7 @@
  *
  * @author juscoder
  */
-function agregarNotas() {
+ function agregarNotas() {
 
     let nom = document.getElementById('nombre').value;
     let not1 = document.getElementById('nota1').value;
@@ -32,7 +32,7 @@ function agregarNotas() {
     //Promediar la suma de las notas entre 3
     var prom = (parseFloat(not1) + parseFloat(not2) + parseFloat(not3)) / 3;
 
-    //Variable observacion
+    //Variable obserbacion
     var obs = 0;
     //Promedio menor o igual a 14 entonces aprobado, caso ocntrario aprobado
     if (prom >= 14 && prom <= 19) {
@@ -47,7 +47,6 @@ function agregarNotas() {
                 obs = value = "!Suspenso¡ ⚠️";
 
             }
-        
 
     const tabla = document.getElementById('addtabla');
 
@@ -57,68 +56,7 @@ function agregarNotas() {
     fila.innerHTML = `<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
 
 
-     document.getElementById('algebra').addEventListener('onchange',CargarDatosAlgebra   )
-    
-    
-        function CargarDatosAlgebra(){
-            var xhr= new XMLHttpRequest();
-            xhr.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    traerDatos(this);
-                }
-            };
-            xhr.open("GET", './data/semestre1.xml', true);
-            xhr.send();
-        }
-        function traerDatos(xml){
-
-            var docXML = xml.responseXML;
-            var tabla = "";
-        
-            var est=docXML.getElementsByTagName("estudiante");
-            for(var i=0; i<est.length; i++){
-        
-                var sum=(parseInt(est[i].getElementsByTagName("Parcial1")[0].textContent)+parseInt(est[i].getElementsByTagName("Parcial2")[0].textContent)+parseInt(est[i].getElementsByTagName("Parcial3")[0].textContent));
-                let prom=(sum/3).toFixed(2);
-        
-                var asis =(parseInt(est[i].getElementsByTagName("Asistencia")[0].textContent));
-                if( sum<30 || asis < 14){
-                    estado="Reprobado"
-                }else if(sum>=30 && sum<42){
-                    estado="Suspenso"
-                } else if(sum>=42 && sum <54 && asis >= 14){
-                    estado="Aprueba";
-                }else if(sum>=55 && sum <=60 && asis >= 14){
-                    var estado="Exonerado";
-                }
-                
-        
-                tabla+= "<tr><td>"
-               
-               
-                tabla += est[i].getElementsByTagName("Nombre")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += est[i].getElementsByTagName("Apellido")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += est[i].getElementsByTagName("Parcial1")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += est[i].getElementsByTagName("Parcial2")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += est[i].getElementsByTagName("Parcial3")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += est[i].getElementsByTagName("Asistencia")[0].textContent;
-                tabla+= "</td><td>"
-                tabla += prom;
-                tabla+= "</td><td>"
-                tabla += estado;
-                tabla+= "</td></tr>"
-                
-                
-            }
-            document.getElementById("info").innerHTML = tabla;
-        }
-
-    
+    document.getElementById('algebra').addEventListener('select', CargarDatosAlgebra)
 
 
     tabla.appendChild(fila);
