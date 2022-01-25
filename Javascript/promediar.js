@@ -69,7 +69,7 @@
         document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#b3deba";
     }else
     if(prom < 10){
-        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#ff4d4d";
+        document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#f77474";
 
     } else {
         document.querySelector("#addtabla tr:last-child td:nth-child(5)").style.background = "#FFCABA";
