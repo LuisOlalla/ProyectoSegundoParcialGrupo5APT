@@ -56,7 +56,7 @@ function agregarNotas() {
     fila.innerHTML = `<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
 
 
-
+    document.getElementById('algebra').addEventListener('select', CargarDatosAlgebra)
 
 
     tabla.appendChild(fila);
