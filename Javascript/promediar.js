@@ -57,7 +57,68 @@ function agregarNotas() {
     fila.innerHTML = `<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
 
 
+    document.querySelector('#algebra').addEventListener('change', CargarDatosAlgebra)
 
+    
+        function CargarDatosAlgebra(){
+            var xhr= new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    traerDatos(this);
+                }
+            };
+            xhr.open("GET", './data/semestre1.xml', true);
+            xhr.send();
+        }
+        function traerDatos(xml){
+
+            var docXML = xml.responseXML;
+            var tabla = "";
+        
+            var est=docXML.getElementsByTagName("estudiante");
+            for(var i=0; i<est.length; i++){
+        
+                var sum=(parseInt(est[i].getElementsByTagName("Parcial1")[0].textContent)+parseInt(est[i].getElementsByTagName("Parcial2")[0].textContent)+parseInt(est[i].getElementsByTagName("Parcial3")[0].textContent));
+                let prom=(sum/3).toFixed(2);
+        
+                var asis =(parseInt(est[i].getElementsByTagName("Asistencia")[0].textContent));
+                if( sum<30 || asis < 14){
+                    estado="Reprobado"
+                }else if(sum>=30 && sum<42){
+                    estado="Suspenso"
+                } else if(sum>=42 && sum <54 && asis >= 14){
+                    estado="Aprueba";
+                }else if(sum>=55 && sum <=60 && asis >= 14){
+                    var estado="Exonerado";
+                }
+                
+        
+                tabla+= "<tr><td>"
+               
+               
+                tabla += est[i].getElementsByTagName("Nombre")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += est[i].getElementsByTagName("Apellido")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += est[i].getElementsByTagName("Parcial1")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += est[i].getElementsByTagName("Parcial2")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += est[i].getElementsByTagName("Parcial3")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += est[i].getElementsByTagName("Asistencia")[0].textContent;
+                tabla+= "</td><td>"
+                tabla += prom;
+                tabla+= "</td><td>"
+                tabla += estado;
+                tabla+= "</td></tr>"
+                
+                
+            }
+            document.getElementById("addtabla").innerHTML = tabla;
+        }
+
+    
 
 
     tabla.appendChild(fila);
