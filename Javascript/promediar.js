@@ -57,8 +57,8 @@ function agregarNotas() {
     fila.innerHTML = `<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
 
 
-    document.querySelector('#algebra').addEventListener('change', CargarDatosAlgebra)
-
+     document.getElementById('algebra').addEventListener('onchange',CargarDatosAlgebra   )
+    
     
         function CargarDatosAlgebra(){
             var xhr= new XMLHttpRequest();
@@ -115,7 +115,7 @@ function agregarNotas() {
                 
                 
             }
-            document.getElementById("addtabla").innerHTML = tabla;
+            document.getElementById("info").innerHTML = tabla;
         }
 
     
