@@ -32,7 +32,7 @@ function agregarNotas() {
     //Promediar la suma de las notas entre 3
     var prom = (parseFloat(not1) + parseFloat(not2) + parseFloat(not3)) / 3;
 
-    //Variable obserbacion
+    //Variable observacion
     var obs = 0;
     //Promedio menor o igual a 14 entonces aprobado, caso ocntrario aprobado
     if (prom >= 14 && prom <= 19) {
@@ -47,6 +47,7 @@ function agregarNotas() {
                 obs = value = "!Suspenso¡ ⚠️";
 
             }
+        
 
     const tabla = document.getElementById('addtabla');
 
