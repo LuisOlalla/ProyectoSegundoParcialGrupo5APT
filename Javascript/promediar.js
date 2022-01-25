@@ -5,6 +5,7 @@
  *
  * @author juscoder
  */
+
  function agregarNotas(){
   
     let nom=document.getElementById('nombre').value;
@@ -12,6 +13,8 @@
     let not2=document.getElementById('nota2').value;
     let not3=document.getElementById('nota3').value;
     
+
+
     //Validadr el campo nombre
     if(nom===""){
         
@@ -33,8 +36,10 @@
     var prom = (parseFloat(not1)+ parseFloat(not2)+ parseFloat(not3)) /3;  
 
     //Variable obserbacion
+
     var  obs =0;
     //Promedio menor o igual a 12.5 entonces aprobado, caso ocntrario aprobado
+
     if (prom >= 14 && prom <= 19) {
         obs = value = "!Aprobado¡ &#x2714";
     } else
@@ -47,6 +52,7 @@
                 obs = value = "!Suspenso¡ ⚠️";
 
             }
+
       
     const tabla=document.getElementById('addtabla');
     
@@ -55,7 +61,9 @@
     
     fila.innerHTML=`<td> ${nom} </td><td> ${not1} </td><td> ${not2} </td><td> ${not3} </td><td> ${prom.toFixed(1)} </td><td> ${obs} </td>`;
     
-     
+
+    document.getElementById('algebra').addEventListener('select', CargarDatosAlgebra)
+
 
 
     
@@ -90,8 +98,7 @@
     }
 
     
-    
-    
+
     document.getElementById('nombre').value='';
     document.getElementById('nota1').value='';
     document.getElementById('nota2').value='';
