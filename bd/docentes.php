@@ -40,7 +40,7 @@
         <div style="width: 50%; height: auto; background-color: #E69171; border-radius: 20px; color: white;">
             <h1>Formulario Docentes</h1>
             <center>
-                <form method="POST" action="estudiantes.php">
+                <form method="POST" action="docentes.php">
                     <p>Nombre</p>
                     <input type="text" name="nombre" placeholder="Nombre">
                     <br>
