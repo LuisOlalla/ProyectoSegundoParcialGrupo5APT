@@ -38,7 +38,7 @@
     <br>
     <br>
     <center>
-        <div style="width: 50%; height: auto; background-color: rgb(102, 178, 255); border-radius: 20px;">
+        <div style="width: 50%; height: auto; background-color: #D12C40; border-radius: 20px; color: white;">
             <h1>Formulario Estudiantes</h1>
             <center>
                 <form method="POST" action="evaluaciones.php">
@@ -61,13 +61,12 @@
                     <input type="text" name="dir" placeholder="Dirección">
                     <br>
                     <br>
-                    <input type="submit" value="Enviar" name="enviar">
+                    <input type="submit" value="Guardar" name="guardar">
                     <input type="submit" value="Mostrar" name="mostrar">
                     <br>
                     <br>
                 </form>
             </center>
-
         </div>
     </center>
     <br>
