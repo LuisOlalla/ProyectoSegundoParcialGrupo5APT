@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../Estilos/s1.css">
+    <link rel="stylesheet" href="../Estilos/estudiantes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +101,7 @@
             echo "<tbody>";
             try {
                 $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
-                foreach($db->query("SELECT nombre_evaluacion,calificacion1,calificacion2,calificacion3,(calificacion1+calificacion2+calificacion3/3) total from evaluaciones") as $filas) {
+                foreach($db->query("SELECT nombre_evaluacion,calificacion1,calificacion2,calificacion3,((calificacion1+calificacion2+calificacion3)/3) total from evaluaciones") as $filas) {
                     
                     echo "<tr class='fil'>";
                     echo "<td class='col'>"; echo $filas['nombre_evaluacion']; echo "</td>";

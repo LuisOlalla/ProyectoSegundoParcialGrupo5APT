@@ -87,3 +87,47 @@
   submit{
     color: violet;
   }
+  .evaluaciones{
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px black;
+    margin-top: 50px;
+    margin-left: -40;
+    margin-bottom: 100px;
+  }
+  th,
+  .col {
+    padding: 15px;
+    background-color: rgb(207, 207, 207);
+    color: black;
+  }
+  th {
+    text-align: left;
+  }
+  thead th {
+    background-color: blueviolet;
+  }
+  tbody .fil:hover {
+    background-color:#E8F8F5;
+  }
+  tbody .col {
+    position: relative;
+  }
+  tbody .col:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: #E8F8F5;
+    z-index: -1;
+  }
+  form{
+    color: purple;
+  
+  }
+  submit{
+    color: violet;
+  }
