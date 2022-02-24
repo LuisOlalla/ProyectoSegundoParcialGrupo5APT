@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../Estilos/s1.css">
+    <link rel="stylesheet" href="../Estilos/estudiantes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,6 +66,74 @@
                 </form>
             </center>
         </div>
+
+        <?php
+
+        $servername = "mysql:host=localhost";
+        $database = "universidad4";
+        $username = "root";
+        $password = "hola";
+
+        $mNRC=$_POST['nrc'];
+         $nNombre=$_POST['n_materia'];
+         $mDocente=$_POST['docente'];
+         $mCreditos=$_POST['creditos'];
+         $mDepartamento=$_POST['departamento'];
+        
+
+        $Guardar = $_POST['guardar'];
+        $Mostrar = $_POST['mostrar'];
+
+
+        if(isset($Guardar)){
+            
+            $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+    
+            $db->query("INSERT INTO materias (nrc,nombre_mat, docente,creditos,departamento) VALUES ('$mNRC','$nNombre','$mDocente,'$mCreditos','$mDepartamento') ");
+            
+        }
+        if(isset($Mostrar)){
+           
+            echo "<table class='estudiantes'>";
+            echo "<thead>";
+            echo "<th> Numero NRC</th>";
+            echo "<th> Nombre de la Materia </th>";
+            echo "<th> Docente </th>";
+            echo "<th> Creditos </th>";
+            echo "<th> Departamento </th>";
+  
+            echo "</thead>";
+            echo "<tbody>";
+            try {
+                $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+                foreach($db->query("SELECT nrc, nombre_mat,docente,creditos,departamento from materias") as $filas) {
+                    
+                    echo "<tr class='fil'>";
+                    echo "<td class='col'>"; echo $filas['nrc']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['nombre_mat']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['docente']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['creditos']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['departamento']; echo "</td>";
+                    echo "</tr>";
+                }
+                
+              } catch (PDOException $e) {
+                  print "Error!: " . $e->getMessage() . "<br/>";
+                  die();
+              }
+           
+            
+            echo "</tbody>";
+            echo "</table>";
+        }
+
+
+
+
+        ?>
+
+
+
     </center>
     <br>
     <br>
