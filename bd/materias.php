@@ -47,7 +47,7 @@
                     <input type="text" name="nrc" placeholder="Ejemplo: 9618">
                     <br>
                     <p>Nombre de Materia</p>
-                    <input type="text" name="n_materia" placeholder="Ejemplo: Aplicación de Tecnologías Web" style="width: 55%;">
+                    <input type="text" name="nombre_mat" placeholder="Ejemplo: Aplicación de Tecnologías Web" >
                     <br>
                     <p>Docente</p>
                     <input type="text" name="docente" placeholder="Docente">
@@ -74,8 +74,8 @@
         $username = "root";
         $password = "hola";
 
-        $mNRC=$_POST['nrc'];
-         $nNombre=$_POST['n_materia'];
+         $mNRC=$_POST['nrc'];
+         $nNombre=$_POST['nombre_mat'];
          $mDocente=$_POST['docente'];
          $mCreditos=$_POST['creditos'];
          $mDepartamento=$_POST['departamento'];
@@ -89,15 +89,17 @@
             
             $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
     
-            $db->query("INSERT INTO materias (nrc,nombre_mat, docente,creditos,departamento) VALUES ('$mNRC','$nNombre','$mDocente,'$mCreditos','$mDepartamento') ");
+            $db->query("INSERT INTO materias (nrc,nombre_mat,docente, creditos, departamento) VALUES ('$mNRC','$nNombre','$mDocente','$mCreditos','$mDepartamento') ");
             
         }
+
+
         if(isset($Mostrar)){
            
-            echo "<table class='estudiantes'>";
+            echo "<table class='materias'>";
             echo "<thead>";
-            echo "<th> Numero NRC</th>";
-            echo "<th> Nombre de la Materia </th>";
+            echo "<th> NumeroNRC</th>";
+            echo "<th> Nombre </th>";
             echo "<th> Docente </th>";
             echo "<th> Creditos </th>";
             echo "<th> Departamento </th>";
