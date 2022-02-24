@@ -38,7 +38,7 @@
     <br>
     <br>
     <center>
-        <div style="width: 50%; height: auto; background-color: rgb(102, 178, 255); border-radius: 20px;">
+        <div style="width: 50%; height: auto; background-color: #D12C40; border-radius: 20px; color: white;">
             <h1>Formulario Estudiantes</h1>
             <center>
                 <form method="POST" action="estudiantes.php">
@@ -67,7 +67,6 @@
                     <br>
                 </form>
             </center>
-
         </div>
         <?php
          $servername = "mysql:host=localhost";

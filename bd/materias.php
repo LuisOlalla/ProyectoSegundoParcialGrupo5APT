@@ -35,6 +35,39 @@
         <div class="wave" style="height: 150px; overflow: hidden;">
             </svg></div>
     </header>
+    <br>
+    <br>
+    <center>
+    <div style="width: 50%; height: auto; background-color: #5271FF; border-radius: 20px; color: white;">
+            <h1>Formulario Materias</h1>
+            <center>
+                <form method="POST" action="materias.php">
+                    <p>NRC</p>
+                    <input type="text" name="nrc" placeholder="Ejemplo: 9618">
+                    <br>
+                    <p>Nombre de Materia</p>
+                    <input type="text" name="n_materia" placeholder="Ejemplo: Aplicación de Tecnologías Web" style="width: 55%;">
+                    <br>
+                    <p>Docente</p>
+                    <input type="text" name="docente" placeholder="Docente">
+                    <br>
+                    <p>Creditos</p>
+                    <input type="text" name="creditos" placeholder="Creditos">
+                    <br>
+                    <p>Departamento</p>
+                    <input type="text" name="departamento" placeholder="Departamento">
+                    <br>
+                    <br>
+                    <input type="submit" value="Guardar" name="guardar">
+                    <input type="submit" value="Mostrar" name="mostrar">
+                    <br>
+                    <br>
+                </form>
+            </center>
+        </div>
+    </center>
+    <br>
+    <br>
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">
