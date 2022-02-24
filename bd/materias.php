@@ -66,7 +66,8 @@
                 </form>
             </center>
         </div>
-
+        <br>
+        <br>
         <?php
 
         $servername = "mysql:host=localhost";

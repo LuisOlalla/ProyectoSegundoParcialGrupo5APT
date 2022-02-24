@@ -35,33 +35,121 @@
         <div class="wave" style="height: 150px; overflow: hidden;">
             </svg></div>
     </header>
-    <div>
-        <h1>Formulario Evaluaciones</h1>
-        <center>
-            <form method="POST" action="evaluaciones.php">
-                <p></p>
-            </form>
-        </center>
-
-    </div>
-
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Phone</h4>
-                <p>8282717281</p>
-            </div>
-            <div class="content-foo">
-                <h4>Email</h4>
-                <p>administracion@gotitas.edu.ec</p>
-            </div>
-            <div class="content-foo">
-                <h4>Ubicación</h4>
-                <p>Santo Domingo de los Tsáchilas</p>
-            </div>
+    <br>
+    <br>
+    <center>
+        <div style="width: 50%; height: auto; background-color: #E69171; border-radius: 20px; color: white;">
+            <h1>Formulario Evaluaciones</h1>
+            <center>
+                <form method="POST" action="evaluaciones.php">
+                    <p>Nombre de la Evalución</p>
+                    <input type="text" name="eva" placeholder="Ejemplo: Evaluacion 1 - U1">
+                    <br>
+                    <p>Calificacion 1</p>
+                    <input type="num" name="nota1" placeholder="Nota 1">
+                    <br>
+                    <p>Calificacion 2</p>
+                    <input type="num" name="nota2" placeholder="Nota 2">
+                    <br>
+                    <p>Calificacion 3</p>
+                    <input type="num" name="nota3" placeholder="Nota 3">
+                    <br>
+                    <br>
+                    <input type="submit" value="Guardar" name="guardar">
+                    <input type="submit" value="Mostrar" name="mostrar">
+                    <br>
+                    <br>
+                </form>
+            </center>
         </div>
-        <h2 class="titulo-final">&copy; GRUPO 5 | Tecnologías Web</h2>
-    </footer>
+        <br>
+        <br>
+        <?php
+
+        $servername = "mysql:host=localhost";
+        $database = "universidad4";
+        $username = "root";
+        $password = "hola";
+
+        $eva = $_POST['eva'];
+        $calificacion1 = $_POST['nota1'];
+        $calificacion2 = $_POST['nota2'];
+        $calificacion = $_POST['nota3'];
+
+
+        $Guardar = $_POST['guardar'];
+        $Mostrar = $_POST['mostrar'];
+
+
+        if (isset($Guardar)) {
+
+            $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+
+            $db->query("INSERT INTO evaluaciones (nombre_evaluacion,calificacion1,calificacion2, calificacion3) VALUES ('$eva','$calificacion1','$calificacion2','$calificacion3') ");
+        }
+
+
+        if (isset($Mostrar)) {
+
+            echo "<table class='materias'>";
+            echo "<thead>";
+            echo "<th> Nombre Evaluacion</th>";
+            echo "<th> Nota 1</th>";
+            echo "<th> Nota 2</th>";
+            echo "<th> Nota 3</th>";
+            echo "<th> Promedio </th>";
+
+            echo "</thead>";
+            echo "<tbody>";
+            try {
+                $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+                foreach ($db->query("SELECT nombre_evaluacion,((calificacion1+calificacion2+calificacion3)/3) total FROM evaluaciones") as $filas) {
+
+                    echo "<tr class='fil'>";
+                    echo "<td class='col'>";
+                    echo $filas['nombre_evaluacion'];
+                    echo "</td>";
+                    echo "<td class='col'>";
+                    echo $filas['calificacion1'];
+                    echo "</td>";
+                    echo "<td class='col'>";
+                    echo $filas['calificacion2'];
+                    echo "</td>";
+                    echo "<td class='col'>";
+                    echo $filas['calificacion3'];
+                    echo "</td>";
+                    echo "<td class='col'>";
+                    echo $filas['total'];
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } catch (PDOException $e) {
+                print "Error!: " . $e->getMessage() . "<br/>";
+                die();
+            }
+
+
+            echo "</tbody>";
+            echo "</table>";
+        }
+        ?>
+        <footer>
+            <div class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Phone</h4>
+                    <p>8282717281</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Email</h4>
+                    <p>administracion@gotitas.edu.ec</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Ubicación</h4>
+                    <p>Santo Domingo de los Tsáchilas</p>
+                </div>
+            </div>
+            <h2 class="titulo-final">&copy; GRUPO 5 | Tecnologías Web</h2>
+        </footer>
 
 </body>
 <!-- Script de bootsatrap -->
