@@ -65,16 +65,17 @@
             </center>
         </div>
         <?php
-         $servername = "mysql:host=localhost";
-         $database = "universidad4";
-         $username = "root";
-         $password = "hola";
+        $servername = "mysql:host=localhost";
+        $database = "universidad4";
+        $username = "root";
+        $password = "hola";
 
-         $mNombre=$_POST['nombre'];
-         $nApellido=$_POST['apellido'];
-         $mCedula=$_POST['cedula'];
-         $mDireccion=$_POST['dir'];
-         $mTelefono=$_POST['telefono'];
+        
+        $nNombre=$_POST['nombre'];
+        $mApellido=$_POST['apellido'];
+        $mCedula=$_POST['cedula'];
+        $nDireccion=$_POST['dir'];
+        $mTelefono=$_POST['telefono'];
 
         $Guardar = $_POST['guardar'];
         $Mostrar = $_POST['mostrar'];
@@ -83,7 +84,7 @@
             
             $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
     
-            $db->query("INSERT INTO docentes (nombre,apellido,cedula,direccion,,telefono) VALUES ('$mNombre','$nApellido','$mCedula','$mDireccion','$mTelefono') ");
+            $db->query("INSERT INTO docentes (nombre,apellido,cedula,direccion,telefono) VALUES ('$nNombre','$mApellido',' $mCedula','$nDireccion','$mTelefono') ");
             
         }
         if(isset($Mostrar)){
@@ -96,11 +97,12 @@
             echo "<th> Cedula </th>";
             echo "<th> Direccion</th>";
             echo "<th> Telefono </th>";
+
             echo "</thead>";
             echo "<tbody>";
             try {
                 $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
-                foreach($db->query("SELECT id_docente, nombre,apellido,cedula,direccion,telefono from docentes") as $filas) {
+                foreach($db->query("SELECT id_docente,nombre,apellido,cedula,direccion,telefono from docentes") as $filas) {
                     
                     echo "<tr class='fil'>";
                     echo "<td class='col'>"; echo $filas['id_docente']; echo "</td>";
@@ -121,7 +123,6 @@
             echo "</tbody>";
             echo "</table>";
         }
-
 
           ?>
     </center>
