@@ -42,7 +42,7 @@
             <h1>Formulario Evaluaciones</h1>
             <center>
                 <form method="POST" action="evaluaciones.php">
-                    <p>Nombre de la Evalución</p>
+                    <p>Nombre de la Evaluación</p>
                     <input type="text" name="eva" placeholder="Ejemplo: Evaluacion 1 - U1">
                     <br>
                     <p>Calificacion 1</p>
@@ -71,64 +71,53 @@
         $username = "root";
         $password = "hola";
 
-        $eva = $_POST['eva'];
-        $calificacion1 = $_POST['nota1'];
-        $calificacion2 = $_POST['nota2'];
-        $calificacion = $_POST['nota3'];
+        $mNombre=$_POST['eva'];
+        $mNota1=$_POST['nota1'];
+        $nNota2=$_POST['nota2'];
+        $mNota3=$_POST['nota3'];
 
 
-        $Guardar = $_POST['guardar'];
-        $Mostrar = $_POST['mostrar'];
+        $Guardar=$_POST['guardar'];
+        $Mostrar=$_POST['mostrar'];
 
 
         if (isset($Guardar)) {
 
             $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
 
-            $db->query("INSERT INTO evaluaciones (nombre_evaluacion,calificacion1,calificacion2, calificacion3) VALUES ('$eva','$calificacion1','$calificacion2','$calificacion3') ");
+            $db->query("INSERT INTO evaluaciones (nombre_evaluacion,calificacion1,calificacion2,calificacion3) VALUES ('$mNombre',$mNota1,$nNota2, $mNota3) ");
         }
-
-
-        if (isset($Mostrar)) {
-
-            echo "<table class='materias'>";
+        if(isset($Mostrar)){
+           
+            echo "<table class='evaluaciones'>";
             echo "<thead>";
             echo "<th> Nombre Evaluacion</th>";
             echo "<th> Nota 1</th>";
             echo "<th> Nota 2</th>";
             echo "<th> Nota 3</th>";
-            echo "<th> Promedio </th>";
-
+            echo "<th> Total</th>";
             echo "</thead>";
             echo "<tbody>";
             try {
                 $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
-                foreach ($db->query("SELECT nombre_evaluacion,((calificacion1+calificacion2+calificacion3)/3) total FROM evaluaciones") as $filas) {
-
+                foreach($db->query("SELECT nombre_evaluacion,calificacion1,calificacion2,calificacion3,(calificacion1+calificacion2+calificacion3/3) total from evaluaciones") as $filas) {
+                    
                     echo "<tr class='fil'>";
-                    echo "<td class='col'>";
-                    echo $filas['nombre_evaluacion'];
-                    echo "</td>";
-                    echo "<td class='col'>";
-                    echo $filas['calificacion1'];
-                    echo "</td>";
-                    echo "<td class='col'>";
-                    echo $filas['calificacion2'];
-                    echo "</td>";
-                    echo "<td class='col'>";
-                    echo $filas['calificacion3'];
-                    echo "</td>";
-                    echo "<td class='col'>";
-                    echo $filas['total'];
-                    echo "</td>";
+                    echo "<td class='col'>"; echo $filas['nombre_evaluacion']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['calificacion1']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['calificacion2']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['calificacion3']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['total']; echo "</td>";
+ 
                     echo "</tr>";
                 }
-            } catch (PDOException $e) {
-                print "Error!: " . $e->getMessage() . "<br/>";
-                die();
-            }
-
-
+                
+              } catch (PDOException $e) {
+                  print "Error!: " . $e->getMessage() . "<br/>";
+                  die();
+              }
+           
+            
             echo "</tbody>";
             echo "</table>";
         }
