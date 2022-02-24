@@ -39,7 +39,7 @@
     <br>
     <br>
     <center>
-        <div style="width: 50%; height: auto; background-color: #E69171; border-radius: 20px; color: white;">
+        <div style="width: 50%; height: auto; background-color: #AADF91; border-radius: 20px; color: white;">
             <h1>Formulario Evaluaciones</h1>
             <center>
                 <form method="POST" action="evaluaciones.php">
