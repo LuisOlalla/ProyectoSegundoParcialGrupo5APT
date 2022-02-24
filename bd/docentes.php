@@ -34,6 +34,97 @@
         <div class="wave" style="height: 150px; overflow: hidden;">
             </svg></div>
     </header>
+    <br>
+    <br>
+    <center>
+        <div style="width: 50%; height: auto; background-color: #E69171; border-radius: 20px; color: white;">
+            <h1>Formulario Docentes</h1>
+            <center>
+                <form method="POST" action="estudiantes.php">
+                    <p>Nombre</p>
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <br>
+                    <p>Apellido</p>
+                    <input type="text" name="apellido" placeholder="Apellido">
+                    <br>
+                    <p>Cedula</p>
+                    <input type="text" name="cedula" placeholder="Cedula">
+                    <br>
+                    <p>Dirección</p>
+                    <input type="text" name="dir" placeholder="Dirección">
+                    <br>
+                    <p>Telefono</p>
+                    <input type="text" name="telefono" placeholder="Telefono">
+                    <br>
+                    <br>
+                    <input type="submit" value="Guardar" name="guardar">
+                    <input type="submit" value="Mostrar" name="mostrar">
+                    <br>
+                    <br>
+                </form>
+            </center>
+        </div>
+        <?php
+         $servername = "mysql:host=localhost";
+         $database = "universidad4";
+         $username = "root";
+         $password = "hola";
+
+         $mNombre=$_POST['nombre'];
+         $nApellido=$_POST['apellido'];
+         $mCedula=$_POST['cedula'];
+         $mDireccion=$_POST['dir'];
+         $mTelefono=$_POST['telefono'];
+
+        $Guardar = $_POST['guardar'];
+        $Mostrar = $_POST['mostrar'];
+
+        if(isset($Guardar)){
+            
+            $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+    
+            $db->query("INSERT INTO docentes (nombre,apellido,cedula,direccion,,telefono) VALUES ('$mNombre','$nApellido','$mCedula','$mDireccion','$mTelefono') ");
+            
+        }
+        if(isset($Mostrar)){
+           
+            echo "<table class='docentes'>";
+            echo "<thead>";
+            echo "<th> ID Docente</th>";
+            echo "<th> Nombre </th>";
+            echo "<th> Apellido </th>";
+            echo "<th> Cedula </th>";
+            echo "<th> Direccion</th>";
+            echo "<th> Telefono </th>";
+            echo "</thead>";
+            echo "<tbody>";
+            try {
+                $db = new PDO("mysql:host=localhost;dbname=$database", $username, $password);
+                foreach($db->query("SELECT id_docente, nombre,apellido,cedula,direccion,telefono from docentes") as $filas) {
+                    
+                    echo "<tr class='fil'>";
+                    echo "<td class='col'>"; echo $filas['id_docente']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['nombre']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['apellido']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['cedula']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['direccion']; echo "</td>";
+                    echo "<td class='col'>"; echo $filas['telefono']; echo "</td>";
+                    echo "</tr>";
+                }
+                
+              } catch (PDOException $e) {
+                  print "Error!: " . $e->getMessage() . "<br/>";
+                  die();
+              }
+           
+            
+            echo "</tbody>";
+            echo "</table>";
+        }
+
+
+          ?>
+    </center>
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">
